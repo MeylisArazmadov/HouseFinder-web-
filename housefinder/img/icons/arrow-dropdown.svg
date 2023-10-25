@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 13" width="9" height="13">
+	<title>fa6-solid_angle-down</title>
+	<defs>
+		<image  width="9" height="6" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGBAMAAADj6an2AAAAAXNSR0IB2cksfwAAACRQTFRF0o4g///////9w48p8Pj4x5Eq/v7+zo8k8fn54/Py4vLx//7/NebEKgAAAAx0Uk5T/wAA/wD/AP8AAAAA2JXoNAAAACtJREFUeJxjYBAUVGBgYGYUZGBgcGVIYHdgkGBgYBFgEJzAsBBISnJtFAAALvADt7jQiXMAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="4"/>
+</svg>

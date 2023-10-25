@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseFinder | Идеальный способ купить и продать дом</title>
+    <link rel="stylesheet" href="scss/style.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__logo"><img src="img/logo.svg" alt="" /></a>
+            <div class="header__navigation">
+                <nav class="header__menu menu">
+                    <ul class="menu__body">
+                        <li class="menu__item"><a href="" class="menu__link">главная</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">о нас</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">купить</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">аренда</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">продать</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">связаться</a></li>
+                    </ul>
+                </nav>
+                <div class="header__buttons" id="open-modal-btn">
+                    <button class="login header__btn" >ВОЙТИ</button>
+                    <button class="register header__btn" >РЕГИСТРАЦИЯ</button>
+                </div>
+				<div class="modal" id="log-reg-modal">
+					<div class="modal-window">
+						<div class="form-box">
+							<div class="form-vale">
+								<form action="">
+									<h1>
+										<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAACydJREFUeF7tXX2QXEUR737r5lSCiV9JNKSMgZCdfl4uMaflB19+BfxCFFBDKFA0foCKhUosIxCDllpKKWgEEyqIHwjEUEglAkYJKlGiFY7jnJmtWOGiCUpI0BjkUneXfW012dPjyO2b99683b3LTtXV/bHTv+7p3/uYme7ph9BqDfUANlR7Szm0CGjwRdAioEVAgz3QYPWtO6BFQIM90GD1rTugRcDoHiiXyy+tVCqvQsSXyx8AzGTmaQAwGREnM/MUkUbEx5h5HwDsQ8RHmbkXAHoR8eGBgYEtHR0djzXYz6Oqb7o7wBjzbgBYCABvAIA5nhynmXlTEAR3K6XWe8L0AtMUBGzbtm1WpVL5ODN/EABe6GVko4M8CgDXVyqVVe3t7Ttz1hUL31ACjDGvAYDLAOBtsZbm0IGZfxYEwQqlVE8O8E6QDSFAHI+IVzDzaU5W5tuJmfk2ALg8DEOTr6pnoteVAHmpRlH0LQB4b70H6qBPiFg9MDCwdP78+fJCr0urCwGbNm161rRp0y5m5uUAMLEuI0uvZC8zLyWiGxCR08O4SeZOQE9Pz7GFQuEWAFjgZlJz9JJZUxRFi9rb23fnaVGuBGitz0XEa8fAVT+aj/ci4mKl1C/zIiE3Aqy1a6rTyrxsryfulUR0eR4KvROgtZZn/B2IKAupcdMQ8SelUul8RKz4HJRXArq7u6cUi8VfA8ArfBrZRFgb+/r6zujs7OzzZZM3Arq7u48qFot/AIB2X8Y1Kc56pdS7EDHyYZ8XApi5YK29CwDe7MOoMYBxLRFd6MNOLwRYa69j5o/6MGgMYXyaiK7Oam9mAowxHwaA1VkNGYPyESKeoJSSx27qlokAa207M28FgGJqC8a24O5KpdKRZbGWmoDt27dP6u/vl13EGWPbh5mt/x0RnZQWJTUBxhh57Mjjp9UAUr8PUhFgrX0tM/++5fn/eeAJZj4+DEMJ9iRqqQgwxmgAoESa/HTejYi3AsAGRNxRqVQeEdhCoTCdmSVefDoAnA0AL/ajzh2FmdeFYXiWu8ShnokJMMbI/HdlUkUZ+/8ZAL6slFobtwBi5sAYcw4ALEPEUka9icQR8fVKqURPhkQEyL7+1KlT/wYAL0lkWbbO31ZKfSbO8SNVVBeHawDgvGzqE0nfSUSJwquJCLDWLmHmVYlMytAZET+plPpuBggwxqyoxp2zwCSRXUBED7gKJCLAGLMDAF7mCp6lHyJeo5S6OAvGkKwx5iYAWOQDKw5DAv1hGMp7yKk5E2CtPUWiRE6o2Ts9SETzs8McQujt7X32gQMHyvW6eA4ePPiCuXPn/svFfmcCtNYSI/2AC2jWPoh4mlLq7qw4w+WNMfIuuNEnZg2sC4lIIoGxzYmA6hUk6X1HxyJm79BFRK/MDvNMBGPMLgCYngf2cExm3hyG4QkuepwI0FqfhYhrXQCz9kHE5UqpL2XFOZy8MUYmEEvywB6JOTg4OKOjo0MIr9lcCfg+In4kDszH72nm0q56tdZnVxdyriKp+zHzBWEY3hAH4ErATkQ8Jg7M0+8zieivnrCeBqO1noeIXXlgj8Rk5pvCMFwcpyuWAGPMbADYFgfk6/e+vr4JnZ2dg77whuN0dXVNbmtrc5qdZNUvKfNKqalxOLEEaK0XI+KP44B8/T44ODixo6PjSV94w3EkYwMRn8gDexTM2Ls5lgBjzJUA8MV6GR0EwaxSqSQHLLw3rfVxiPgX78CjACLiqXFJXbEEWGtvZWbnlZ2HwZ1MRL/1gPMMCK31GxFR0mbq0ly2UmIJMMZI1KueeT65ZaEZY74GAEvr4v1DSlYS0Sdq6XMhQBZg9dxf97oNMXzwxhjJ/1f1IgAR75AcoqwE7K/TCni4nQuJaKNPR2mtJZnqdp+YDlhbiEhOAY3aXO6A3HPkD2PdViLqdBigc5dGRPGY+eEwDI8diwTI0dNvKqU+5+zhGh2NMT8CgHN9YCXEeJKIah5IadY74KlxyvaHUipT0pcxZpmEMxM6zlt3IqrpYxcC9tbh6GitAX+FiBKvQyQkWS6XVzf4jMJeIqo5gXEhQBZFM71dEumAZP9mBRHFvkSrQflFiChXft1mPIcblq93QDcAzE3nN+9SkhCwjpnXB0Gwa2Bg4JG2trYAAKSkwSxEfA8AyLSvntPmWoOMjW3E3gFa67tkSe3dlUcG4AYiekemWZC19mpm/tSR4S+/o2Tmq8Iw/GwmAhqUiOXXE41DW0JE12ciQGv9JkT8VePGMHY1M/OJYRjel4mAahDjn2nSGMeu67xYXhkcHJwUF9uIfQmLKcaYLQDwai9mHTkgvyGiU+KG60qArCRlXl3vJmUC/gQAXYgoGQZ/B4D/xBgxMYqi6Ygo6ScLELFzqLJWPY1HxC8opb4ap9OJAGvtycx8bxyYp9+3MfNPC4XCbaVS6SEfmFrr+bJGYOZzEHGWD8w4DCFeKSXHt2o2JwIEwVq7O+craQsiSgp6riXFrLVnSrIuM3fEOSfD79uJ6DgXeWcCtNZXIeIlLqAJ+zzOzJeGYSip5HVp1e2Ki4RwAHieb6VJksuSEJBHTs3WYrH41tmzZ+/x7QQXPGvtzCiK7vR9kCNJYoEzATIgY4w8k32VIriFiN7v4qg8+1RTVdZVKzX6UHUvETkXKklKwPsA4GYPVt6ulJJ8U6+VR9LaVU0+lmyJ16XFGJJzSUUZriMRASKotbYZb9lEV0hWh7jKV++EzRl3fmNjwCPtSUxAxjz7ncw8LwxDWVk3XdNaT6vmjkp13jTt7UT0iySCiQmoHn6TAEmad8GeQqFw0pw5c+S0StO1crk8J4oi2bt5UQrjUt3ZiQkQw8rlcmcURX9MuT/UlCRorUNElMVmGuf3B0Gg0qRUpiKg+i74DiLWzPqqcRXtY+YzwzC8J8WV5l3EWnsqM8vkYnJK8MuIKFXgPwsBkmks01Kpap62fZ6Ivp5W2IecMUZKJ8tR1rQtUyZfagKqj6K51UdRW1rrAeD+SqVyQXt7u82AkVi0WmrnhwAwL7Hw/wX+HQQBlUol2SRM1TIRIBqttecz8w9SaX+6kJQ0/gYR/cMD1qgQ3d3dxxSLRdnZ/ZgHPW8hokzBqswEeHgfjPTDSmb+nu9C2tWJg5xz83VIz8vj0wsB4kFjzAbPZegfkFqdALAxbXl5a62US15YTc6So1a+2hoi+pAPMG8ESNnKCRMmbM5pm1c26+5j5h5EfDCKol2FQmGPUmqH6G1ra5tSqVSmyCZYFEXtQRCEEo8FgOf7cNIIjMQFOWrZ4I0AUVIt3Cpp5c2SyOXV/4h4z8DAwOlxcd4kSr0SUJ0ZHR1FkXwQYbzVEL25r6/vPN8nOL0TMMT+eCrezcwrwjC8IsmV7do3NwKGTVGlutZRrgY1Wb+xW75+yJHVDzj8HADCJnNuTXPGxQcchkaotZ4QBMElzCzL/uc2ORF7EPHSUql047j4hMlwZ/f09MwoFArXAMAZTUiCVEO/rr+/f9m4+4jPSGdrraWWzoom+ciDOH5t9UU7vj9jdRgiTkRE2YmMTeHL446RGkhRFC33ve2RxNZcZ0GuhkgkipkvYmYpKzbJVS5NP2beFQTB6iiKVqWpdJtGZ91WwlmN27lz53P279//TkSURZx8Zc9XYfCHmFl2LTeGYSgfmmia1hR3wGjesNYeL7HnKIrkc7ZyUFD+pAbPJEScNCxVUpJ45et3Eux/6nO2QRD0yn9EvF8p9XjTeHyEIU1NQLM6zaddLQJ8ejMFVouAFE7zKdIiwKc3U2C1CEjhNJ8iLQJ8ejMFVouAFE7zKdIiwKc3U2D9F13G/Y6F9yIlAAAAAElFTkSuQmCC"/>
+									</h1>
+									<div class="input-box">
+										<input type="email" placeholder="ЛОГИН" required>
+										<i class='bx bxs-user'></i>
+									</div>
+									<div class="input-box">
+										<input type="password" placeholder="ПАРОЛЬ" required>
+										<i class='bx bxs-lock-alt' ></i>
+									</div>
+
+									<div class="remember-forget">
+										<lable>
+											<input type="checkbox"> Запомнить
+										</lable> 
+										<a class="forget-btn" href="#">Не запоминать</a>
+									</div>
+									<button type="submit" class="log-reg-modal-btn">ВОЙТИ</button>
+
+									<div class="register-link">
+										<a class="register-link-btn" href="#">Нет аккаунда</a>
+									</div>
+								</form>
+							</div>
+						</div>
+						<button class="button-close" id="close-modal-btn">
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAW9JREFUSEvtlL1KA0EUhc/dMAwIYqMkgoXkB80u+wJiDKit+BpiK/gmYmMl+ALiE6ikUjGEnWRXsdZS62SuDEwghN2djRBsMvWd89177g9hzo/mrI8FwOnw/1qklDpn5usgCD7TUh0MBlta65bv+1dZpWRWoJQ6BXAB4I2Z96YhURTViegBQIWZj4MguE2DZAKiKKpYgTqAd2ZujSFJklSHw2EHQBnAqxCi3Wg0fmYCmOA0iBBiqai40XA2WSm1DuAegKkkBrBibAHwLKU8qNVq33mj5ASYz91ud0MIYfzetGK5tkwCCwF6vV7Z87wOEVXt5xcp5b4r+0IWGfFSqfRoLUqsRaa5T1LKQxckt4LJzJn5Q2u943ne8ng8ATgryQSkiYdh+GWny+yAGdM1FyRvD06I6BJAwszt6UWL43h7NBqZxq8S0VGz2bybeQ/6/f6Z1vom61RYyO6fToXzTBYMKDSmBbVSwxYAp3tzt+gXHxeaGQbgWVkAAAAASUVORK5CYII="/>
+						</button>
+					</div>
+					<div class="overlay"></div>
+				</div>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+	<main class="page">
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+					<h1 class="hero__title">Идеальный способ купить и продать дом</h1>
+					<p class="hero__text text">всего за пару кликов!!!</p>
+					<div class="hero__filter filter">
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div class="block-filter__type">Цель</div>
+									<div class="block-filter__icon"></div>
+								</div>
+								<div class="block-filter__value">Купить</div>
+							</div>
+							<div class="block-filter__dropdown">
+								<div class="block-filter__item">Продать</div>
+								<div class="block-filter__item">Арендовать</div>
+							</div>
+						</div>
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div class="block-filter__type">Город</div>
+									<div class="block-filter__icon"></div>
+								</div>
+								<div class="block-filter__value">Йошкар-Ола</div>
+							</div>
+							<div class="block-filter__dropdown">
+								<div class="block-filter__item">Казань</div>
+								<div class="block-filter__item">Чебоксары</div>
+								<div class="block-filter__item">Нижний Новгород</div>
+							</div>
+						</div>
+						<div class="filter__block block-filter">
+							<div class="block-filter__button">
+								<div class="block-filter__header">
+									<div class="block-filter__type">Тип</div>
+									<div class="block-filter__icon"></div>
+								</div>
+								<div class="block-filter__value">Квартира</div>
+							</div>
+							<div class="block-filter__dropdown">
+								<div class="block-filter__item">Коттедж</div>
+								<div class="block-filter__item">Участок</div>
+								<div class="block-filter__item">Склад, гараж</div>
+							</div>
+						</div>
+						<div class="filter__btn">
+							<button>Search</button>
+						</div>
+					</div>
+				</div>
+                <div class="hero__img"><img src="img/hero.jpeg" alt="house"></div>
+            </div>
+			<img class="hero-decore" src="img/hero-decore.svg" alt="dimond">
+        </section>
+    </main>
+	<script defer src="js/toggle.js"></script>
+</body>
+</html>
